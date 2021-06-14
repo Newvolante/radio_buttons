@@ -1,25 +1,21 @@
 (function() {
     console.warn('Script linked correctly to the web page');
 
-    // nodelist with the first 2 options
-    let options = document.forms[0].elements.option;
+    let options = document.forms[0].elements.option; // nodelist with the first 2 options
 
-    // other checkbox
-    let otherCheckbox = document.forms[0].elements.other_checkbox;
+    let otherCheckbox = document.forms[0].elements.other_checkbox; // other checkbox
 
-    // other text
-    let otherTextbox = document.getElementById('other-text');
+    let otherTextbox = document.getElementById('other-text');   // other text
 
-    // hides the other textbox as the page loads
-    otherTextbox.className = "hidden";
+    otherTextbox.className = "hidden";  // hides the other textbox as the page loads
     
     // clicking on the "other" option makes the textbox visible
     otherCheckbox.addEventListener('change', function () {
         otherTextbox.className = 'visible';
         Array.from(options).forEach(item => {
             item.checked = false;
-        })
-    })
+        });
+    });
     
     // assigning event listeners to the first 2 options 
     options.forEach(item => {
