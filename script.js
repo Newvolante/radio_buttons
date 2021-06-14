@@ -12,4 +12,8 @@
 
     // hides the other textbox as the page loads
     otherTextbox.className = "hidden";
+
+    otherCheckbox.addEventListener('change', function () {
+        otherTextbox.className = 'visible';
+    })
 })();
