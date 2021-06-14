@@ -12,8 +12,21 @@
 
     // hides the other textbox as the page loads
     otherTextbox.className = "hidden";
-
+    
+    // clicking on the "other" option makes the textbox visible
     otherCheckbox.addEventListener('change', function () {
         otherTextbox.className = 'visible';
+        Array.from(options).forEach(item => {
+            item.checked = false;
+        })
     })
+    
+    // assigning event listeners to the first 2 options 
+    options.forEach(item => {
+        item.addEventListener('change', function() {
+            otherTextbox.value = '';
+            otherTextbox.className = "hidden";
+            otherCheckbox.checked = false;
+        });
+    });
 })();
